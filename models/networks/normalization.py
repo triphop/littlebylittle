@@ -65,7 +65,7 @@ class SPADE(nn.Module):
         super().__init__()
 
         assert config_text.startswith('spade')
-        parsed = re.search('spade(\D+)(\d)x\d', config_text)
+        parsed = re.search(r'spade(\D+)(\d)x\d', config_text)
         param_free_norm_type = str(parsed.group(1))
         ks = int(parsed.group(2))
 
